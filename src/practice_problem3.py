@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 3.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Matthew De Clerck.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -64,7 +64,7 @@ def is_prime(n):
     return True
     # ------------------------------------------------------------------
     # Students:
-    #   Do NOT touch the above  is_prime  function - it has no TODO.
+    #   Do NOT touch the above  is_prime  function - it has no Done.
     #   Do NOT copy code from this function.
     #
     # Instead, ** CALL ** this function as needed in the problems below.
@@ -156,13 +156,21 @@ def practice_problem3a(circles):
       :type sequence: [rg.Circle]
     """
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
+
+    product = 1
+    for k in range(len(circles)):
+        Circle = circles[k]
+        product = product * Circle.center.x
+
+    return product
+
 
 
 def run_test_practice_problem3b():
@@ -266,7 +274,7 @@ def practice_problem3b(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:  You are NOT allowed to use the
@@ -278,6 +286,13 @@ def practice_problem3b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+
+    test = sequence[len(sequence) - 1]
+    for k in range(len(sequence) - 1):
+        if test == sequence[k]:
+            return True
+
+    return False
 
 
 def run_test_practice_problem3c():
@@ -362,6 +377,13 @@ def practice_problem3c(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
 
+    index = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            index.append(k)
+
+    return index
+
 
 def run_test_practice_problem3d():
     """ Tests the    practice_problem3d    function. """
@@ -436,13 +458,19 @@ def practice_problem3d(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
+
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+
+    return -1
 
 
     ####################################################################
@@ -529,6 +557,13 @@ def practice_problem3e(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+
+    ans = 0
+    for k in range(len(sequence)):
+        if k % 2 == 0:
+            ans += sequence[k]
+
+    return ans
 
 
 # ----------------------------------------------------------------------
